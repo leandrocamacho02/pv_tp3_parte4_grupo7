@@ -53,7 +53,7 @@ const DetalleProyecto = () => {
           Descripción
         </Typography>
         {descripcion.map((parrafo, index) => (
-          <Typography key={index} paragraph>
+          <Typography key={index} sx={{ mb: 2 }}>
             {parrafo}
           </Typography>
         ))}
@@ -92,7 +92,7 @@ const DetalleProyecto = () => {
               <ListItemText
                 primary={miembro.nombre}
                 secondary={miembro.rol}
-                primaryTypographyProps={{ fontWeight: 'medium' }}
+                primaryTypographyProps={{ sx: { fontWeight: 'medium' } }}
               />
             </ListItem>
           ))}

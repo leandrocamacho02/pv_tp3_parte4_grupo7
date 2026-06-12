@@ -15,7 +15,7 @@ const Dashboard = () => {
       </Typography>
 
       <Grid container spacing={3}>
-        <Grid item xs={12} md={4}>
+        <Grid xs={12} md={4}>
           <Card sx={{ display: 'flex', alignItems: 'center', p: 2, boxShadow: 3, borderRadius: 3, height: '100%' }}>
             <Box sx={{ bgcolor: '#1565c0', color: 'white', p: 2, borderRadius: 2, display: 'flex' }}>
               <FolderIcon sx={{ fontSize: 40 }} />
@@ -31,7 +31,7 @@ const Dashboard = () => {
           </Card>
         </Grid>
 
-        <Grid item xs={12} md={4}>
+        <Grid xs={12} md={4}>
           <Card sx={{ display: 'flex', alignItems: 'center', p: 2, boxShadow: 3, borderRadius: 3, height: '100%' }}>
             <Box sx={{ bgcolor: '#ef6c00', color: 'white', p: 2, borderRadius: 2, display: 'flex' }}>
               <AccessTimeIcon sx={{ fontSize: 40 }} />
@@ -47,7 +47,7 @@ const Dashboard = () => {
           </Card>
         </Grid>
 
-        <Grid item xs={12} md={4}>
+        <Grid xs={12} md={4}>
           <Card sx={{ display: 'flex', alignItems: 'center', p: 2, boxShadow: 3, borderRadius: 3, height: '100%' }}>
             <Box sx={{ bgcolor: '#2e7d32', color: 'white', p: 2, borderRadius: 2, display: 'flex' }}>
               <CheckCircleIcon sx={{ fontSize: 40 }} />

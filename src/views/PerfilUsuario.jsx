@@ -19,21 +19,21 @@ const PerfilUsuario = () => {
             <ListItemText 
               primary="Nombre" 
               secondary="Lucas Rodríguez" 
-              primaryTypographyProps={{ fontWeight: 'bold' }}
+              primaryTypographyProps={{ sx: { fontWeight: 'bold' } }}
             />
           </ListItem>
           <ListItem disablePadding sx={{ py: 1 }}>
             <ListItemText 
               primary="Rol" 
               secondary="Estudiante - Analista Programador Universitario" 
-              primaryTypographyProps={{ fontWeight: 'bold' }}
+              primaryTypographyProps={{ sx: { fontWeight: 'bold' } }}
             />
           </ListItem>
           <ListItem disablePadding sx={{ py: 1 }}>
             <ListItemText 
               primary="Institución" 
               secondary="Facultad de Ingeniería - Universidad Nacional de Jujuy" 
-              primaryTypographyProps={{ fontWeight: 'bold' }}
+              primaryTypographyProps={{ sx: { fontWeight: 'bold' } }}
             />
           </ListItem>
         </List>

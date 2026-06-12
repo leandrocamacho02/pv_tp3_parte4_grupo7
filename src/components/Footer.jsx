@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Box component="footer" sx={{ bgcolor: '#002855', color: 'white', py: 4, mt: 'auto', boxShadow: 3 }}>
       <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+        <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1 }}>
           <SchoolIcon sx={{ fontSize: 28, opacity: 0.9 }} />
           <Typography variant="body1" fontWeight="bold">
             EduProjects &copy; 2026 — Plataforma Educativa.

@@ -7,7 +7,6 @@ import App from './App.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      {/* CssBaseline resetea los estilos para que Material UI se vea perfecto */}
       <CssBaseline />
       <App />
     </BrowserRouter>
