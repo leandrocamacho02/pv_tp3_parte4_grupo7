@@ -78,6 +78,7 @@ Los datos se visualizan mediante componentes:
 - Typography
 - List
 - Divider
+
 # Gestión de Proyectos
 ## Lista de Proyectos
 
