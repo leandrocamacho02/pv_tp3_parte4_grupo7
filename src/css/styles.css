@@ -342,4 +342,38 @@ footer p {
   .cards-container {
     grid-template-columns: 1fr;
   }
+  
+}
+/* Material UI overrides */
+.MuiButton-root {
+  border-radius: 25px !important;
+  font-weight: bold !important;
+  text-transform: none !important;
+}
+
+.MuiCard-root {
+  border-top: none !important;
+  border-left: none !important;
+}
+
+.MuiChip-root {
+  font-weight: bold !important;
+}
+.MuiTypography-h4 {
+  text-align: center !important;
+}
+
+.MuiTypography-subtitle1 {
+  text-align: center !important;
+}
+.MuiTypography-h4 {
+  text-align: center !important;
+}
+
+.MuiTypography-subtitle1 {
+  text-align: center !important;
+}
+
+.MuiCard-root {
+  border-left: none !important;
 }

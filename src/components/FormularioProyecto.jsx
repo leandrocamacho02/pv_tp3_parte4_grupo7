@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { TextField, Button, Select, MenuItem, FormControl, InputLabel } from '@mui/material'
 
 const FormularioProyecto = ({ onAgregar }) => {
   const [nuevoProyecto, setNuevoProyecto] = useState({
@@ -65,53 +66,57 @@ const FormularioProyecto = ({ onAgregar }) => {
     <section className="filtros">
       <h3>Agregar Proyecto</h3>
       <div className="from-filtros">
-        <input
-          type="text"
+        <TextField
+          label="Título"
           name="titulo"
-          placeholder="Título"
           value={nuevoProyecto.titulo}
           onChange={handleChange}
+          size="small"
         />
-        <input
-          type="text"
+        <TextField
+          label="Categoría"
           name="categoria"
-          placeholder="Categoría"
           value={nuevoProyecto.categoria}
           onChange={handleChange}
+          size="small"
         />
-        <select
-          name="estado"
-          value={nuevoProyecto.estado}
-          onChange={handleChange}
-        >
-          <option value="En curso">En curso</option>
-          <option value="Finalizado">Finalizado</option>
-        </select>
+        <FormControl size="small" sx={{ minWidth: 150 }}>
+          <InputLabel>Estado</InputLabel>
+          <Select
+            name="estado"
+            value={nuevoProyecto.estado}
+            onChange={handleChange}
+            label="Estado"
+          >
+            <MenuItem value="En curso">En curso</MenuItem>
+            <MenuItem value="Finalizado">Finalizado</MenuItem>
+          </Select>
+        </FormControl>
       </div>
 
       <div className="from-filtros" style={{ marginTop: '15px' }}>
-        <input
-          type="text"
-          placeholder="Párrafo 1"
+        <TextField
+          label="Párrafo 1"
           value={nuevoProyecto.descripcion[0]}
           onChange={(e) => handleDescripcion(0, e.target.value)}
+          size="small"
         />
-        <input
-          type="text"
-          placeholder="Párrafo 2"
+        <TextField
+          label="Párrafo 2"
           value={nuevoProyecto.descripcion[1]}
           onChange={(e) => handleDescripcion(1, e.target.value)}
+          size="small"
         />
       </div>
 
       <div className="from-filtros" style={{ marginTop: '15px' }}>
         {nuevoProyecto.recursos.map((recurso, index) => (
-          <input
+          <TextField
             key={index}
-            type="text"
-            placeholder={`URL ${recurso.tipo}`}
+            label={`URL ${recurso.tipo}`}
             value={recurso.url}
             onChange={(e) => handleRecurso(index, e.target.value)}
+            size="small"
           />
         ))}
       </div>
@@ -119,23 +124,27 @@ const FormularioProyecto = ({ onAgregar }) => {
       <div style={{ marginTop: '15px' }}>
         {nuevoProyecto.equipo.map((miembro, index) => (
           <div key={index} className="from-filtros" style={{ marginBottom: '10px' }}>
-            <input
-              type="text"
-              placeholder="Nombre"
+            <TextField
+              label="Nombre"
               value={miembro.nombre}
               onChange={(e) => handleEquipo(index, 'nombre', e.target.value)}
+              size="small"
             />
-            <input
-              type="text"
-              placeholder="Rol"
+            <TextField
+              label="Rol"
               value={miembro.rol}
               onChange={(e) => handleEquipo(index, 'rol', e.target.value)}
+              size="small"
             />
           </div>
         ))}
-        <div className="from-filtros">
-          <button onClick={agregarMiembro}>+ Agregar miembro</button>
-          <button onClick={handleSubmit}>Agregar Proyecto</button>
+        <div className="from-filtros" style={{ marginTop: '15px' }}>
+          <Button variant="outlined" color="primary" onClick={agregarMiembro}>
+            + Agregar miembro
+          </Button>
+          <Button variant="contained" color="primary" onClick={handleSubmit}>
+            Agregar Proyecto
+          </Button>
         </div>
       </div>
     </section>

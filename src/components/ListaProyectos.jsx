@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import proyectoService from "../services/proyectoService"
 import ProyectoCard from "./ProyectoCard"
-import DetalleProyecto from "./DetalleProyecto"
 import RegistroActividad from "./RegistroActividad"
 import FormularioProyecto from "./FormularioProyecto"
 
@@ -9,7 +8,6 @@ const ListaProyectos = () => {
   const [proyectos, setProyectos] = useState(proyectoService.obtenerProyectos())
   const [busqueda, setBusqueda] = useState('')
   const [ultimaActualizacion, setUltimaActualizacion] = useState(null)
-  const [proyectoSeleccionado, setProyectoSeleccionado] = useState(null)
   
   const primeraVez = useRef(true)
 
@@ -36,7 +34,7 @@ const ListaProyectos = () => {
     setProyectos(proyectoService.obtenerProyectos())
   }
 
- const handleBuscar = (e) => {
+  const handleBuscar = (e) => {
     const { value } = e.target
     setBusqueda(value)
   }
@@ -44,15 +42,6 @@ const ListaProyectos = () => {
   const handleAgregar = (nuevoProyecto) => {
     proyectoService.agregarProyecto(nuevoProyecto)
     setProyectos(proyectoService.obtenerProyectos())
-  }
-  
-  if (proyectoSeleccionado) {
-    return (
-      <DetalleProyecto
-        proyecto={proyectoSeleccionado}
-        onVolver={() => setProyectoSeleccionado(null)}
-      />
-    )
   }
 
   return (
@@ -78,7 +67,6 @@ const ListaProyectos = () => {
             key={proyecto.id}
             proyecto={proyecto}
             onEliminar={handleEliminar}
-            onVerDetalle={setProyectoSeleccionado}
           />
         ))}
       </section>

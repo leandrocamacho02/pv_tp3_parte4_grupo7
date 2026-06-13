@@ -1,16 +1,46 @@
-const ProyectoCard = ({ proyecto, onEliminar, onVerDetalle }) => {
+import { Card, CardContent, Typography, Button, Chip, Box } from '@mui/material'
+import { Link } from 'react-router-dom'
+
+const ProyectoCard = ({ proyecto, onEliminar }) => {
   const { id, titulo, categoria, estado } = proyecto
 
-  const badgeClase = estado === 'Finalizado' ? 'badge badge-finalizado' : 'badge badge-encurso'
-
   return (
-    <article className="card">
-      <h4>{titulo}</h4>
-      <p><strong>Categoría:</strong> {categoria}</p>
-      <span className={badgeClase}>{estado}</span>
-      <button className="btn-eliminar" onClick={() => onEliminar(id)}>Eliminar</button>
-      <button className="btn-detalle" onClick={() => onVerDetalle(proyecto)}>Ver detalle</button>
-    </article>
+    <Card>
+      <CardContent>
+        <Typography variant="h6" fontWeight="bold" gutterBottom>
+          {titulo}
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          <strong>Categoría:</strong> {categoria}
+        </Typography>
+        <Box sx={{ mb: 2 }}>
+          <Chip
+            label={estado}
+            color={estado === 'Finalizado' ? 'success' : 'warning'}
+            size="small"
+          />
+        </Box>
+        <Box sx={{ display: 'flex', gap: 1 }}>
+          <Button
+            variant="contained"
+            color="error"
+            size="small"
+            onClick={() => onEliminar(id)}
+          >
+            Eliminar
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            component={Link}
+            to={`/proyectos/${id}`}
+          >
+            Ver detalle
+          </Button>
+        </Box>
+      </CardContent>
+    </Card>
   )
 }
 
